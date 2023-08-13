@@ -42,8 +42,7 @@ async def send_message(text):
 async def handle_alert(request):
     body = await request.json()
     title = body['title']
-    status = body['status']
-    await send_message(f'[{status}] {title}')
+    await send_message(title)
     return web.Response(text='Ok')
 
 
