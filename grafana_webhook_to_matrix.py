@@ -69,4 +69,4 @@ app.add_routes([
 
 
 if __name__ == '__main__':
-    web.run_app(app, host='127.0.0.1', port=8003)
+    web.run_app(app, port=8003)
