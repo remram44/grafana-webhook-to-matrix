@@ -57,8 +57,7 @@ async def handle_alert(request):
         raise web.HTTPForbidden()
 
     body = await request.json()
-    title = body['title']
-    await send_message(homeserver, access_token, room, title)
+    await send_message(homeserver, access_token, room, body['message'])
     return web.Response(text='Ok')
 
 
