@@ -1,4 +1,4 @@
-FROM python:3.10 AS deps
+FROM python:3.13 AS deps
 
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 - && /root/.local/bin/poetry config virtualenvs.create false && \
@@ -13,7 +13,7 @@ COPY pyproject.toml poetry.lock ./
 RUN /root/.local/bin/poetry export -o requirements.txt
 
 
-FROM python:3.10
+FROM python:3.13
 
 # Install requirements
 COPY --from=deps /usr/src/app/requirements.txt /requirements.txt
